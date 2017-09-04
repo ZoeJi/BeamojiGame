@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Beam Game</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One|VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:700" rel="stylesheet">
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <!-- <div id="gridArea">
+    </div> -->
+
+    <div class="mdl-grid">
+      <div id = "gridArea" class="mdl-cell mdl-cell--7-col"></div>
+      <div class="mdl-cell mdl-cell--3-col">
+        <div id = "beamoji"> BeaMoji Game</div>
+        <div id="leaderBoard">
+          <div class="topPlayer topPlayer1">
+              <div id="p1Name" class="topPlayerName"></div>
+
+              <ul>
+                  <li id="p1"></li>
+              </ul>
+
+          </div>
+      <!--    -->
+          <div class="topPlayer topPlayer3">
+              <div id="p2Name" class="topPlayerName"></div>
+
+              <ul>
+                  <li id="p2"></li>
+              </ul>
+          </div>
+          <div class="topPlayer topPlayer4">
+              <div  id="p3Name" class="topPlayerName"></div>
+
+              <ul>
+                  <li id="p3"></li>
+              </ul>
+          </div>
+      </div>
+
+      <div id="legend">
+        <p>💊  attack+</p>
+        <p>💎  defense+</p>
+        <p>💩  bad luck!</p>
+      </div>
+
+    </div>
+    </div>
+
+ <div class="sidebar-spectator">
+
+        <div id="right_col-spectator">
+            <div class="chat-container-spectator float-right">
+
+            <div id="toAppend">
+
+            </div>
+
+             <div class="header-spectator">
+                <p class="title">Console</p>
+            </div>
+
+                <div id="entriesContainer-spectator" class="list-container">
+                    <ul id="moveEntries-spectator" class="list-item mdl-list">
+                    </ul>
+                </div>
+
+                <div class="chat-interface-spectator">
+                    <div class="textarea-contain">
+                        <textarea id="playerMove" placeholder="Send a message"></textarea>
+                    </div>
+                    <div class="chat-buttons-container clearfix">
+                        <button id="moveSend" class="button primary float-right">Chat</button>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+
+        <div id="right_col">
+            <div class="chat-container float-right">
+
+
+                <div id="playerNameControls">
+                    <div class="textarea-contain-set">
+                        <textarea id="playerName" placeholder="Set player name"></textarea>
+                    </div>
+                    <div class="chat-buttons-container clearfix">
+                        <button id="playerSet" class="button primary float-right">OK</button>
+                    </div>
+                </div>
+
+
+                <div id="leaderBoardContainer" class="list-container">
+                    <div id="emojiContainer">
+                        <p id="emoji" class="big-emoji"></p>
+                    </div>
+                    <div id="statusContainer">
+                        <p id="username" class="statusEntry"></p>
+                        <p id="hp" class="statusEntry"></p>
+                        <p id="attack" class="statusEntry"></p>
+                        <p id="defense" class="statusEntry"></p>
+                    </div>
+                </div>
+                <div class="header">
+                    <p class="title">Console</p>
+                </div>
+                <div id="entriesContainer" class="list-container">
+                    <ul id="moveEntries" class="list-item mdl-list">
+                    </ul>
+                </div>
+
+
+
+                <div class="chat-interface">
+                    <div class="textarea-contain">
+                        <textarea id="playerMove" placeholder="Send a message"></textarea>
+                    </div>
+                    <div class="chat-buttons-container clearfix">
+                        <button id="moveSend" class="button primary float-right">Chat</button>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

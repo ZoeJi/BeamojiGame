@@ -1,0 +1,366 @@
+body{
+  overflow: hidden;
+}
+
+#playerMove {
+  line-height: 28px;
+  font: inherit;
+  letter-spacing: inherit;
+  color: #666;
+  vertical-align: top;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-clip: padding-box;
+  background: #fff;
+  padding: 7px;
+}
+
+#playerName {
+  line-height: 28px;
+  font: inherit;
+  letter-spacing: inherit;
+  color: #666;
+  vertical-align: top;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-clip: padding-box;
+  background: #fff;
+  padding: 7px;
+}
+
+textarea:focus {
+  outline: 0;
+  box-shadow: 0 0 3px 1px rgba(185, 155, 235, 0.75);
+  border: 1px solid rgba(100, 65, 165, 0.75);
+}
+
+.button {
+  position: absolute;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  line-height: 30px;
+  height: 30px;
+  font-size: 14px;
+  font-family: inherit;
+  padding: 0;
+  color: #6441a5;
+  border: 0;
+  background: none;
+}
+
+.button.primary {
+  background: #6441a5;
+  color: #fff;
+  padding: 0 10px;
+  font-size: 12px;
+}
+.chat-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 340px;
+  background-color: #f2f2f2;
+}
+
+.chat-container-spectator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 340px;
+  background-color: #f2f2f2;
+}
+
+.header {
+  height: 26px;
+  padding: 10px 0;
+  line-height: 26px;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  box-shadow: inset -1px -1px 0 0 #dedede;
+	font-family: 'Righteous', cursive;
+	color: #6441A5;
+}
+
+.header-spectator {
+  height: 26px;
+  padding: 10px 0;
+  line-height: 26px;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  box-shadow: inset -1px -1px 0 0 #dedede;
+  font-family: 'Righteous', cursive;
+  color: #6441A5;
+}
+
+.your-score {
+  height: 26px;
+  padding: 10px 0;
+  line-height: 26px;
+  text-align: left;
+  font-size: 14px;
+  width: 100%;
+  box-shadow: inset -1px -1px 0 0 #dedede;
+}
+
+#playerNameControls {
+  color: #8c8c8c;
+  border-color: #3b3b3b;
+  width: 100%;
+  padding: 0 20px 20px;
+  box-sizing: border-box;
+}
+
+.chat-interface {
+  color: #8c8c8c;
+  border-color: #3b3b3b;
+  height: 111px;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  padding: 0 20px 20px;
+  box-sizing: border-box;
+}
+
+.chat-interface-spectator {
+  color: #8c8c8c;
+  border-color: #3b3b3b;
+  height: 111px;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  padding: 0 20px 20px;
+  box-sizing: border-box;
+}
+
+.textarea-contain {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.textarea-contain textarea {
+  width: 300px;
+  height: 50px;
+  padding-right: 25px;
+  margin: 0;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.textarea-contain-set {
+  width: 100%;
+  height: 38px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.textarea-contain-set textarea {
+  width: 300px;
+  height: 38px;
+  padding-right: 25px;
+  margin: 0;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.chat-buttons-container {
+  width: 100%;
+  display: block;
+}
+
+.float-right {
+  float: right;
+}
+
+#moveEntries {
+  overflow-x:   hidden;
+  overflow-y:   scroll;
+  position:   absolute;
+  top:        146px;
+  bottom:     131px;
+  width: 100%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  display: block;
+  background-clip: content-box;
+	line-height: 15px;
+}
+
+#moveEntries-spectator {
+  overflow-x:   hidden;
+  overflow-y:   scroll;
+  position:   absolute;
+  top:        436px;
+  bottom:     131px;
+  width: 100%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  display: block;
+  background-clip: content-box;
+}
+
+.list-item li {
+  line-height: 15px;
+  min-height: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.list-item li:hover {
+  background-color: pink;
+}
+
+/*#leaderBoard {
+    height: 200px;
+    box-shadow: inset -1px -1px 0 0 #dedede;
+}*/
+
+#leaderBoardContainer {
+  height: 100px;
+  display: flex;
+  box-shadow: inset -1px -1px 0 0 #dedede;
+}
+
+#playerNameControls {
+  height: 100px;
+  box-shadow: inset -1px -1px 0 0 #dedede;
+}
+
+#leaderBoardEntries {
+
+}
+
+#emojiContainer {
+  overflow: none;
+  -webkit-flex: none;
+          flex: none;
+  width: 99px;
+  border-color: #dedede;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+}
+
+#username {
+	font-size: 18pt;
+}
+
+#statusContainer {
+  overflow: none;
+  -webkit-flex: none;
+          flex: none;
+  width: 224px;
+  padding: 12px 0 8px 16px;
+	font-family: 'Orbitron', sans-serif;
+	font-weight: bolder;
+	font-size: 15pt;
+	color: #926D66;
+}
+
+.statusEntry {
+  line-height: 6px;
+}
+
+.encounter {
+    color: red;
+}
+
+.fight {
+    color: #c5b358;
+		font-size: 16pt;
+		font-family: 'VT323', monospace;
+}
+
+.winner, .dead {
+	color: #6441A5;
+	font-size: 20pt;
+	font-family: 'VT323', monospace;
+}
+
+.big-emoji {
+    padding: 31pt 0 0 9pt;
+    font-size: 55pt;
+}
+
+
+.append-container {
+    height: 100px;
+    display: flex;
+    box-shadow: inset -1px -1px 0 0 #dedede;
+}
+
+#notification {
+	margin-top: 30px;
+}
+
+#beamoji {
+	font-family: 'Righteous', cursive;
+	font-size: 40pt;
+	margin-top: 50px;
+	color: #6441A5;
+}
+/*added new leaderboard*/
+#leaderBoard {
+		margin-top:50px;
+		width: 800px; /* total computed width */
+		zoom: 1;
+	}
+
+	/* --------------- */
+
+	#leaderBoard .topPlayer {
+    font-family: 'VT323', monospace;
+		background: #fff;
+		border: 1px solid #ddd;
+		color: #333;
+		padding: 20px;
+		width: 150px;
+		float: left;
+		position: relative;
+		margin: 0 5px;
+		-moz-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
+		-webkit-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
+		box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
+	}
+
+	/* --------------- */
+
+	#leaderBoard .topPlayerName {
+		position: relative;
+		font-size: 25pt;
+		font-weight: normal;
+		text-transform: uppercase;
+		padding: 40px;
+		margin: -20px -20px 20px -20px;
+		border-bottom: 8px solid;
+		background-color: #0000;
+    border-bottom-color: #6441A5;
+	}
+
+	/* --------------- */
+
+	#leaderBoard ul {
+		margin: 20px 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	#leaderBoard li {
+		padding: 10px 0;
+    font-size: 20pt;
+	}
+
+#legend {
+  display: inline-block;
+  margin: 50px 0 0 50px;
+}
+
+#legend p {
+  font: 13px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;
+  font-size: 25px;
+}
