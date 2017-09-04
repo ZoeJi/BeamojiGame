@@ -1,7 +1,6 @@
-# Module 2 group project #
-__Submitted by:__ Team BEAM
+# Beamoji Game #
 
-__Team members:__
+__Worked with other team members:__
 
 - jixxx181@umn.edu
 - liux3401@umn.edu
@@ -18,7 +17,7 @@ __Argument of ambition:__
 - When you try to add two users with the same username in the same game (session), it rejects it and requests for you to add a new username
 - Emoji locations (except players) are random and they will not appear on each other or on the players
 - In the console, when monsters, poop, prayers, and diamonds are mentioned they will be represented by emojis and individual player icons will show as their player emojis
-- When you attack a monster or player, a decription of events of the encounter shows up on the console/chat box, showing up as 'rounds' or turn based combat. 
+- When you attack a monster or player, a decription of events of the encounter shows up on the console/chat box, showing up as 'rounds' or turn based combat.
 - When a monster, diamond, prayer, or poop is stepped on/fought, it will disappear and a new emoji of the same type will appear randomly on the board.
 
 __Argument of execution:__
