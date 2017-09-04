@@ -188,9 +188,9 @@ function updateStatus(update) {
 
 function updateLeaderboard(update) {
   console.log(update);
-  $("#p1Name").text(update[0].name);
-  $("#p2Name").text(update[1].name);
-  $("#p3Name").text(update[2].name);
+  $("#p1Name").text("🥇" + update[0].name);
+  $("#p2Name").text("🥈" + update[1].name);
+  $("#p3Name").text("🥉" + update[2].name);
   $("#p1").text("Killed " + update[0].number + " players");
   $("#p2").text("Killed " + update[1].number + " players");
   $("#p3").text("Killed " + update[2].number + " players");
