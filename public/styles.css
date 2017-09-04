@@ -1,6 +1,6 @@
-body{
+/*body{
   overflow: hidden;
-}
+}*/
 
 #playerMove {
   line-height: 28px;
@@ -216,24 +216,9 @@ textarea:focus {
   background-color: pink;
 }
 
-/*#leaderBoard {
-    height: 200px;
-    box-shadow: inset -1px -1px 0 0 #dedede;
-}*/
-
-#leaderBoardContainer {
-  height: 100px;
-  display: flex;
-  box-shadow: inset -1px -1px 0 0 #dedede;
-}
-
 #playerNameControls {
   height: 100px;
   box-shadow: inset -1px -1px 0 0 #dedede;
-}
-
-#leaderBoardEntries {
-
 }
 
 #emojiContainer {
@@ -300,67 +285,25 @@ textarea:focus {
 
 #beamoji {
 	font-family: 'Righteous', cursive;
-	font-size: 30pt;
-	margin-top: 50px;
+	font-size: 35pt;
 	color: #6441A5;
+  line-height: 60px;
+  margin-bottom: 20px;
 }
-/*added new leaderboard*/
-#leaderBoard {
-		margin-top:50px;
-		width: 800px; /* total computed width */
-		zoom: 1;
-	}
-
 	/* --------------- */
-
-	#leaderBoard .topPlayer {
-    font-family: 'VT323', monospace;
-		background: #fff;
-		border: 1px solid #ddd;
-		color: #333;
-		padding: 20px;
-		width: 150px;
-		float: left;
-		position: relative;
-		margin: 0 5px;
-		-moz-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
-		-webkit-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
-		box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
-	}
-
-	/* --------------- */
-
-	#leaderBoard .topPlayerName {
-		position: relative;
-		font-size: 25pt;
-		font-weight: normal;
-		text-transform: uppercase;
-		padding: 40px;
-		margin: -20px -20px 20px -20px;
-		border-bottom: 8px solid;
-		background-color: #0000;
-    border-bottom-color: #6441A5;
-	}
-
-	/* --------------- */
-
-	#leaderBoard ul {
-		margin: 20px 0;
-		padding: 0;
-		list-style: none;
-	}
-
-	#leaderBoard li {
-		padding: 10px 0;
-    font-size: 20pt;
-	}
 
 #legend {
   display: inline-block;
-  margin: 50px 0 0 50px;
+  margin-top: 30px;
 }
 
 #legend p {
   font: 13px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;
-  font-size: 25px;
+  font-size: 20px;
+  color: #424242;
+}
+
+#key {
+  font-family: 'Righteous', cursive;
+  color: #6441A5;
 }

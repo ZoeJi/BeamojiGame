@@ -18,43 +18,44 @@
 <body>
 
     <div class="mdl-grid">
-      <div id = "gridArea" class="mdl-cell mdl-cell--5-col"></div>
-
+      <div class="mdl-cell mdl-cell--1-col"></div>
       <div class="mdl-cell mdl-cell--3-col">
         <div id = "beamoji"> BeaMoji Game</div>
-        <div id="leaderBoard">
-          <div class="topPlayer topPlayer1">
-              <div id="p1Name" class="topPlayerName"></div>
 
-              <ul>
-                  <li id="p1"></li>
-              </ul>
+        <div id="leaderboard">
+          <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Player</th>
+                <th class="mdl-data-table__cell--non-numeric"> Wins</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="p1Name" class="mdl-data-table__cell--non-numeric"></td>
+                <td id="p1" class="mdl-data-table__cell--non-numeric"></td>
+              </tr>
+              <tr>
+                <td id="p2Name" class="mdl-data-table__cell--non-numeric"></td>
+                <td id="p2" class="mdl-data-table__cell--non-numeric"></td>
+              </tr>
+              <tr>
+                <td id="p3Name" class="mdl-data-table__cell--non-numeric"></td>
+                <td id="p3" class="mdl-data-table__cell--non-numeric"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-          </div>
-      <!--    -->
-          <div class="topPlayer topPlayer2">
-              <div id="p2Name" class="topPlayerName"></div>
-
-              <ul>
-                  <li id="p2"></li>
-              </ul>
-          </div>
-          <div class="topPlayer topPlayer3">
-              <div  id="p3Name" class="topPlayerName"></div>
-
-              <ul>
-                  <li id="p3"></li>
-              </ul>
-          </div>
-      </div>
-
-      <div id="legend">
-        <p>💊  attack+</p>
-        <p>💎  defense+</p>
-        <p>💩  bad luck!</p>
-      </div>
-
+        <div id="legend">
+          <h4 id="key">Keys</h4>
+          <p>💊  attack+</p>
+          <p>💎  defense+</p>
+          <p>💩  bad luck!</p>
+        </div>
     </div>
+
+    <div id = "gridArea" class="mdl-cell mdl-cell--5-col"></div>
     </div>
 
  <div class="sidebar-spectator">
@@ -121,8 +122,6 @@
                     <ul id="moveEntries" class="list-item mdl-list">
                     </ul>
                 </div>
-
-
 
                 <div class="chat-interface">
                     <div class="textarea-contain">

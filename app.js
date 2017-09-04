@@ -1,11 +1,12 @@
 var MongoClient = require('mongodb').MongoClient;
-var mongoURI = 'mongodb://127.0.0.1:27017/'
-var db_name = "beamoji"
-// var db_user = "lamxx204"
-// var db_pswd = "melissa"
-// var x500 = "lamxx204" // <-- Replace this with your x500
+var mongoURI = 'mongodb://127.0.0.1:27017/beamoji';
+if(process.env.MLAB_USERNAME_BEAMOJI) {
+  var username = process.env.MLAB_USERNAME_BEAMOJI;
+  var password = process.env.MLAB_PASSWORD_BEAMOJI;
+  mongoURI = 'mongodb://' + username + ':' + username + '@ds121464.mlab.com:21464/heroku_pjnh0n71';
+}
 
-MongoClient.connect(mongoURI + db_name, function(err, db){
+MongoClient.connect(mongoURI, function(err, db){
   if (err) {
     throw err;
   }
