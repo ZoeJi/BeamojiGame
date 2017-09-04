@@ -1,5 +1,5 @@
 var socket = io.connect();
-var boardDimension = 30;
+var boardDimension = 10;
 var thisPlayer = "";
 var direction = { '38': 'up', '40': 'down', '37': 'left', '39': 'right'};
 var pieces = {

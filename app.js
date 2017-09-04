@@ -1,26 +1,22 @@
 var MongoClient = require('mongodb').MongoClient;
-var mongoURI = 'mongodb://ec2-54-175-174-41.compute-1.amazonaws.com:20/'
-var db_name = "module2"
-var db_user = "lamxx204"
-var db_pswd = "melissa"
-var x500 = "lamxx204" // <-- Replace this with your x500
+var mongoURI = 'mongodb://127.0.0.1:27017/'
+var db_name = "beamoji"
+// var db_user = "lamxx204"
+// var db_pswd = "melissa"
+// var x500 = "lamxx204" // <-- Replace this with your x500
+
 MongoClient.connect(mongoURI + db_name, function(err, db){
   if (err) {
     throw err;
   }
   else {
-    db.authenticate(db_user, db_pswd, function(err, result) {
-      if (err) {
-        throw err;
-      }
-      else {
 		    console.log('Successfully connected to database');
 
         var express = require('express');
         var app = express();
 
         // TO-DO: sync boardDimension value on server and client.
-        var boardDimension = 30; // for test
+        var boardDimension = 10; // for test
         var row = boardDimension - 1; // for test
         var playerCounter = 1;
 
@@ -155,23 +151,23 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
 
             while (playerProfile[player].hp>0 && monsterProfile[current].hp>0){
                 round++;
-                console.log("player.hp: ", playerProfile[player].hp)
-                console.log("monster.hp: ", monsterProfile[current].hp)
-                console.log("in")
+                // console.log("player.hp: ", playerProfile[player].hp)
+                // console.log("monster.hp: ", monsterProfile[current].hp)
+                // console.log("in")
                 var mes2 = '-------- round: ' + round + '------- <br><br>';
                 io.sockets.emit('fight', mes2);
 
               if((playerProfile[player].attack - monsterProfile[current].defense) > 0){
                 monsterProfile[current].hp = monsterProfile[current].hp - (playerProfile[player].attack - monsterProfile[current].defense);
-                console.log("attack player greater than defense monster")
-                console.log(monsterProfile[current].hp)
+                // console.log("attack player greater than defense monster")
+                // console.log(monsterProfile[current].hp)
                 var mes3 = playerProfile[player].code + ' HP: ' + playerProfile[player].hp + '<br>';
                 var mes4 = "\ud83d\ude08" + ' HP: ' + monsterProfile[current].hp + '<br>'
                 io.sockets.emit('fight', mes3);
                 io.sockets.emit('fight', mes4);
               }
               else{/*WHY WHEN IT ENTERS HERE IT DOES NOT CONTINUE EVALUATING THE OTHER CONDITIONS!!!!!!*/
-                console.log("attack player less than defense monster")
+                // console.log("attack player less than defense monster")
 
                 var mes4 = playerProfile[player].code + ' could not attack' + "\ud83d\ude08" + '<br>';
                 io.sockets.emit('fight', mes4);
@@ -180,42 +176,42 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
 
               if((monsterProfile[current].attack - playerProfile[player].defense) > 0){
                 playerProfile[player].hp = playerProfile[player].hp - (monsterProfile[current].attack - playerProfile[player].defense);
-                console.log("attack monster greater than defense player")
-                console.log(playerProfile[player].hp)
+                // console.log("attack monster greater than defense player")
+                // console.log(playerProfile[player].hp)
                 var mes5 = playerProfile[player].code + ' HP: ' + playerProfile[player].hp + '<br>' ;
                 var mes6 = "\ud83d\ude08" + ' HP: ' + monsterProfile[current].hp + '<br>';
                 io.sockets.emit('fight', mes5);
                 io.sockets.emit('fight', mes6);
               }
               else{/*WHY WHEN IT ENTERS HERE IT DOES NOT CONTINUE EVALUATING THE OTHER CONDITIONS!!!!!!*/
-                console.log("attack monster less than defense player")
+                // console.log("attack monster less than defense player")
                 var mes6 = "\ud83d\ude08 could not attack" + playerProfile[player].code + '<br>';
                 io.sockets.emit('fight', mes6);
               }
 
 
               if((playerProfile[player].attack - monsterProfile[current].defense) <= 0 && (monsterProfile[current].attack - playerProfile[player].defense) <= 0){
-                console.log("they cannot hurt each other, had to finish!!")
+                // console.log("they cannot hurt each other, had to finish!!")
                 var mes7 = 'They cannot hurt each other!!<br>';
                 io.sockets.emit('fight', mes7);
                 break;
               }
               if((monsterProfile[current].attack == playerProfile[player].defense)){
-                console.log("attack monster equals than defense player")
+                // console.log("attack monster equals than defense player")
                 /*var mes8 = 'Attack monster equals than defense player<br>';
                 io.sockets.emit('fight', mes8);*/
 
 
               }
               if((playerProfile[player].attack == monsterProfile[current].defense)){
-                console.log("attack player equals than defense monster")
+                // console.log("attack player equals than defense monster")
               }
             }
 
             if(playerProfile[player].hp <= 0){
               die(player);
-              console.log("player :", player,"is dead")
-              console.log(playerProfile[player])
+              // console.log("player :", player,"is dead")
+              // console.log(playerProfile[player])
             }
 
             if(monsterProfile[current].hp <= 0){
@@ -223,7 +219,7 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
               delete monsterProfile[current];
               delete findMonster[current];
               playerProfile[player].hp = playerProfile[player].hp + 5;
-              console.log("monster: ",current," is dead")
+              // console.log("monster: ",current," is dead")
               newMonster();
 
             // var playerInsertionMonster = {"player": player}
@@ -239,9 +235,9 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
 
             //----------CODE IF ENCOUNTERS WITH PRAYER (SWORD)---------------
             else if(praySet.has(current)){
-          	console.log(player,"LET´S PRAY BITCHES");
+          	// console.log(player,"LET´S PRAY BITCHES");
           	praySet.delete(current);
-          	console.log(praySet);
+          	// console.log(praySet);
             newPray();
 
           	var newAttack = playerProfile[player].attack + 4;
@@ -265,7 +261,7 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
             else if(playerSet.has(current) && current != playerProfile[player].pos){
               var fighter = findPlayer[current];
 
-              console.log(player,"---- starts FIGHTING");
+              // console.log(player,"---- starts FIGHTING");
               var mes1 = playerProfile[player].code + " vs " + playerProfile[fighter].code + "---- starts FIGHTING";
               io.sockets.emit('fight', mes1);
 
@@ -274,15 +270,15 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
               if((playerProfile[player].attack - playerProfile[fighter].defense) > 0 || (playerProfile[fighter].attack - playerProfile[player].defense)> 0){
                 while (playerProfile[player].hp > 0 && playerProfile[fighter].hp > 0){
                   round++;
-                  console.log("entro")
+                  // console.log("entro")
                   if((playerProfile[player].attack - playerProfile[fighter].defense) > 0){
                   playerProfile[fighter].hp = playerProfile[fighter].hp - (playerProfile[player].attack - playerProfile[fighter].defense);
                   }
                   if((playerProfile[fighter].attack - playerProfile[player].defense) > 0){
                   playerProfile[player].hp = playerProfile[player].hp - (playerProfile[fighter].attack - playerProfile[player].defense);
                   }
-                  console.log('round: ', round, '| new player hp: ', playerProfile[player].hp)
-                  console.log('round: ', round, '| new fighter hp: ', playerProfile[fighter].hp)
+                  // console.log('round: ', round, '| new player hp: ', playerProfile[player].hp)
+                  // console.log('round: ', round, '| new fighter hp: ', playerProfile[fighter].hp)
                   var mes2 = '-------- round: ' + round + '------- <br><br>';
                   var mes3 = playerProfile[player].code + ' HP: ' + playerProfile[player].hp;
                   var mes4 = playerProfile[fighter].code + ' HP: ' + playerProfile[fighter].hp;
@@ -293,7 +289,7 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
 
                 var looser = '';
                 if((playerProfile[player].hp - playerProfile[fighter].hp)>0){
-                  console.log('******* ', fighter, ' dead ************')
+                  // console.log('******* ', fighter, ' dead ************')
 
                   var playerInsertionPlayer = player
                   db.collection('playerPlay').insert({playerInsertionPlayer});
@@ -306,7 +302,7 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
                   die(fighter);
                 }
                 else if((playerProfile[player].hp - playerProfile[fighter].hp)<0){
-                  console.log('******* ', playerProfile[player], ' dead ************')
+                  // console.log('******* ', playerProfile[player], ' dead ************')
                   var playerInsertionFighter = fighter
                    db.collection('playerFight').insert({playerInsertionFighter});
 
@@ -318,17 +314,17 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
                   die(player);
                 }
                 else{
-                  console.log('******* both dead *******')
-                  console.log('playerProfile', playerProfile);
+                  // console.log('******* both dead *******')
+                  // console.log('playerProfile', playerProfile);
                   die(player);
                   die(fighter);
                 }
               }
               else {
-                console.log('******* both survive *******')
+                // console.log('******* both survive *******')
                 var mes6 = '******* both survive *******';
                 io.sockets.emit('fight', mes6);
-                console.log('playerProfile: ', playerProfile)
+                // console.log('playerProfile: ', playerProfile)
               }
             }
             else{
@@ -342,7 +338,7 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
                 io.sockets.emit('updateStatus', update);
             }
 
-            console.log(playerSet);
+            // console.log(playerSet);
             // console.log("current: " + playerProfile[player].pos);
             redraw();
           }
@@ -375,13 +371,13 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
               findPlayer[availableProfile[Object.keys(availableProfile)[0]].pos] = playerName;
               delete availableProfile[Object.keys(availableProfile)[0]];
             }
-            console.log(findPlayer);
+            // console.log(findPlayer);
             playerCounter++;
             if (playerCounter > 4) {
               playerCounter == 5;
             }
-            console.log(playerSet);
-            console.log(playerProfile);
+            // console.log(playerSet);
+            // console.log(playerProfile);
             redraw();
 
             updateStatus(playerName);
@@ -455,6 +451,10 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
 
         function dbquery(){
           var sol = {};
+          sol[0] = { 'name': "NA", 'number': "0"};
+          sol[1] = { 'name': "NA", 'number': "0"};
+          sol[2] = { 'name': "NA", 'number': "0"};
+
             var a = db.collection('playerPlay').aggregate(([
             {"$group" : {_id:"$playerInsertionPlayer", count:{$sum:1}}}
             , {$sort:{"count":-1}}
@@ -465,6 +465,7 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
              else{
               //  console.log(result);
              }
+
              for(var player in result){
                if(player<3){
                  sol[player] = { 'name': result[player]._id, 'number': result[player].count};
@@ -485,8 +486,7 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
             console.log("Room is full!!!");
           }
 
-          // var leader = dbquery();
-          // console.log(leader);
+          var leader = dbquery();
             var sol = {};
               var a = db.collection('playerPlay').aggregate(([
               {"$group" : {_id:"$playerInsertionPlayer", count:{$sum:1}}}
@@ -504,7 +504,7 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
                   //  console.log(sol);
                  }
                }
-               io.sockets.emit('updateLeaderboard', sol);
+              io.sockets.emit('updateLeaderboard', sol);
             });
 
         })
@@ -556,8 +556,5 @@ MongoClient.connect(mongoURI + db_name, function(err, db){
             })
         })
 
-
-      }
-    })
   }
 })
