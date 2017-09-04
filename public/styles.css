@@ -288,6 +288,7 @@ textarea:focus {
 	font-size: 35pt;
 	color: #6441A5;
   line-height: 60px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 	/* --------------- */
@@ -306,4 +307,8 @@ textarea:focus {
 #key {
   font-family: 'Righteous', cursive;
   color: #6441A5;
+}
+
+.mdl-data-table th {
+  color:#6441A5;
 }
