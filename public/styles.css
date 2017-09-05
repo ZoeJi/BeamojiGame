@@ -33,7 +33,6 @@ textarea:focus {
 }
 
 .button {
-  position: absolute;
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -54,7 +53,7 @@ textarea:focus {
   font-size: 12px;
 }
 .chat-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
