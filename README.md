@@ -8,7 +8,7 @@ We're aiming to implement this project as a non-ending game. The game allows at 
 Express, WebSockets, and MongoDB.
 
 ### See it live here: 
-http://beamoji.heroku.com
+http://zjbeamoji.herokuapp.com
 
 ### Game explained:
 - Used a console to display information between server and client
